@@ -1,0 +1,13 @@
+packages: .
+
+-- Optional: Use this to keep all builds local to the project
+-- so you don't pollute your global environment.
+-- Comment out if you prefer shared builds.
+write-ghc-environment-files: always
+
+-- Optional: pin specific package versions
+-- constraints:
+--   brick ==1.3.*, aeson ==2.1.*
+
+-- Optional: suppress noisy output
+-- verbosity: silent
