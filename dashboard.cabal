@@ -1,0 +1,21 @@
+cabal-version:       >=1.10
+name:                dashboard
+version:             0.1.0.0
+build-type:          Simple
+
+executable multi-table-ui
+  main-is:             App.hs
+  hs-source-dirs:      .
+  default-language:    Haskell2010
+  build-depends:
+      base >=4.12 && <5
+    , brick >=1.3
+    , vty >=5.24
+    , aeson >=1.5
+    , bytestring
+    , text
+    , containers
+    , unordered-containers
+    , http-conduit
+    , directory
+    , time
