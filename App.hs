@@ -52,11 +52,11 @@ data TableConfig = TableConfig
   } deriving Show
 
 instance FromJSON FieldMapping where
-  parseJSON = withObject "FieldMapping" $ ->
+  parseJSON = withObject "FieldMapping" $ \v ->
     FieldMapping <$> v .: "title" <*> v .: "body" <*> v .: "id"
 
 instance FromJSON TableSource where
-  parseJSON = withObject "TableSource" $ -> do
+  parseJSON = withObject "TableSource" $ \v -> do
     typ <- v .: "type"
     case (typ :: String) of
       "static" -> do
@@ -70,7 +70,7 @@ instance FromJSON TableSource where
       _ -> fail "Unknown source type"
 
 instance FromJSON TableConfig where
-  parseJSON = withObject "TableConfig" $ ->
+  parseJSON = withObject "TableConfig" $ \v ->
     TableConfig <$> v .:? "title"
                 <*> v .:? "columnHeaders"
                 <*> v .:  "placement"
